@@ -1,0 +1,75 @@
+<!DOCTYPE=HTML>
+<HTML>
+<HEAD>
+<TITLE>Hyrule Warriors</TITLE>
+<link rel="stylesheet" type="text/css" href="grid.css">
+<META http-equiv="Content-Type" content="text/html;charset=utf-8">
+</HEAD>
+<BODY>
+    <img src="HEADER.png"></img>
+<div class="red">
+	<div class="kolona cetiri"> 
+
+	<li>
+	<input type='text' id='link_id'>
+	<input type='button' id='link' value='Pretraga' onClick='javascript:goTo()'>
+	</li>
+
+	<li><a href="http://www.olx.ba/profil/voltage" target="_blank">Prodaja</a></li>
+	<li><a href="Servis.html">Servis</a></li>
+    <li><a href="Vijesti.html">Vijesti</a></li>
+	<li><a href="lokacije.html">Lokacije</a></li>
+	<li><a href="O nama.html" >O nama</a></li>
+	<li><a href="index.html"> <img id="Home" src="home.png"> </a> </li>
+    </div>
+	
+</div>
+
+<div class="red">
+    <div class="kolona jedan" style="background: #096790"></div>
+	<div class="kolona tri" >
+	<div id="map"></div>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
+        });
+        var infoWindow = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+	
+	</div>	
+	
+</div>
+
+</BODY>
+</HTML>
