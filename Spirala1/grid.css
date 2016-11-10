@@ -1,0 +1,78 @@
+*{
+	box-sizing: border-box;
+}
+head{
+	width: 100%;
+	margin: 0 auto;
+	min-width: 500px;
+	max-width: 1300px;
+}
+img{
+	width: 100%;
+	margin: 0 auto;
+}
+body{
+	width: 100%;
+	margin: 0 auto;
+	min-width: 500px;
+	max-width: 1300px;
+}
+
+li {
+    float: left;
+}
+
+p{
+	color: white;
+	font-family: "Lucida Console";
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: right;
+    padding: 8px;
+    text-decoration: none;
+}
+#ps4{
+	margin: 0 auto;
+	height: 150px;
+	width: 249px;
+}
+.red{
+	padding: 0px;
+	width:100%;
+	float:left;
+	min-height: 10px;
+	background: #000000;
+}
+
+.kolona{
+	background: #000000;
+	margin-left: 0%;
+	margin-right: 0%;
+	display: inline-block; /*Omogućava da se kolone prikažu bez da se float mora clearovati poslije*/
+	float: left;
+	min-height: 10px;
+}
+
+.kolona:first-child{
+	margin-left: 0px;
+}
+
+.kolona:last-child{
+	margin-right: 0px;
+}
+
+.kolona.cetiri{
+	width: 100%;
+}
+.kolona.tri{
+	width: 74%;
+}
+.kolona.dva{
+	width: 48%;
+}
+.kolona.jedan{
+	width: 22%;
+}
